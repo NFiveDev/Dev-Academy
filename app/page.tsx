@@ -19,7 +19,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col lg:flex-row items-center lg:justify-center gap-y-4 lg:gap-y-0 gap-x-4 mt-4">
               <a href="/course">
-                <button className="flex flex-row gap-x-2 items-center bg-emerald-600 hover:bg-emerald-500 py-2 px-4 rounded-lg">
+                <button className="flex flex-row gap-x-2 items-center bg-emerald-500 hover:bg-emerald-400 py-2 px-4 rounded-lg">
                   <p className="text-lg text-slate-800 font-medium">Get started</p>
                   <div className="bg-emerald-800 rounded-full p-1">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white"
@@ -30,7 +30,7 @@ export default function Home() {
                 </button>
               </a>
               <a href="/course">
-                <button className="flex flex-row gap-x-2 items-center bg-slate-600 hover:bg-slate-500 py-2 px-4 rounded-lg">
+                <button className="flex flex-row gap-x-2 items-center bg-slate-300 dark:bg-slate-500 hover:bg-slate-400 py-2 px-4 rounded-lg">
                   <p className="text-lg text-slate-800 font-medium">Watch intro</p>
                   <div className="bg-slate-800 rounded-full p-1">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" className="w-4 h-4">

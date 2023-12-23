@@ -13,7 +13,13 @@ export default function useTheme() {
 
   useEffect(() => {
     const dom = document.querySelector('#dev-academy-dom');
-    setDomElement(dom)
+    setDomElement(dom);
+
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      enableDarkMode();
+    } else {
+      disableDarkMode();
+    }
   }, []);
 
   useEffect(() => {
@@ -24,7 +30,7 @@ export default function useTheme() {
     if(isCurrentModeLight()) {
       domElement?.classList.remove('dark')
     }
-  }, [themeState.mode])
+  }, [themeState.mode]);
 
   const enableDarkMode = () => {
     themeDispatch({type: 'enable-darkmode'});

@@ -31,9 +31,11 @@ function NavBar() {
     <header className="border-slate-600 border-b">
       <div className="max-w-screen-2xl mx-auto py-4">
         <div className="flex flex-row justify-between">
-          <div>
-            <h1 className="text-white">Dev Academy</h1>
-          </div>
+          <Link href={'/'}>
+            <div>
+              <h1 className="text-white">Dev Academy</h1>
+            </div>
+          </Link>
           <div className="flex flex-row">
             <ThemeToggle />
             <Divider />
