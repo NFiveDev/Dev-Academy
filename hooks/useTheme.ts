@@ -9,14 +9,7 @@ export default function useTheme() {
   if (themeDispatch === null || themeState === null) throw Error('Use theme hook inside providers');
 
   const isCurrentModeDark = () => themeState.mode === 'dark';
-
-  const toggleColorMode = () => {
-    if (isCurrentModeDark()) {
-      themeDispatch({ type: 'disable-darkmode' })
-    } else {
-      themeDispatch({ type: 'enable-darkmode' })
-    }
-  }
+  const isCurrentModeLight = () => themeState.mode === 'light';
 
   useEffect(() => {
     const dom = document.querySelector('#dev-academy-dom');
@@ -24,16 +17,29 @@ export default function useTheme() {
   }, []);
 
   useEffect(() => {
-    console.log('RAN')
     if(isCurrentModeDark()) {
-      domElement?.classList.add(themeState.mode);
-    } else {
-      domElement?.classList.remove('dark')
+      domElement?.classList.add('dark')
     }
     
+    if(isCurrentModeLight()) {
+      domElement?.classList.remove('dark')
+    }
   }, [themeState.mode])
 
+  const enableDarkMode = () => {
+    themeDispatch({type: 'enable-darkmode'});
+  }
+
+  const disableDarkMode = () => {
+    themeDispatch({type: 'disable-darkmode'});
+  }
+
+  
+
   return {
-    toggleColorMode: toggleColorMode
+    isLightMode: isCurrentModeLight,
+    isDarkMode: isCurrentModeDark,
+    enableDarkMode: enableDarkMode,
+    disableDarkMode: disableDarkMode,
   }
 }
