@@ -1,6 +1,9 @@
+'use client'
+
 import Link from "next/link";
 import Divider from "./divider";
 import { ThemeToggle } from "./themeToggle";
+import { usePathname } from "next/navigation";
 
 function MobileNavigation() {
   return (
@@ -9,17 +12,26 @@ function MobileNavigation() {
 }
 
 function DesktopNavigation() {
+  const currentPath = usePathname();
+  const isLinkActive = (key: string) => {
+    
+    return key === currentPath;
+  }
+
+  const tailLinkClass = 'text-emerald-500 font-semibold';
+  const tailCurrentLinkClass = 'text-slate-500 font-semibold';
+
   return (
     <nav className="hidden lg:block">
       <ul className="flex gap-x-2">
         <li>
-          <Link href={'/course'}><span className='text-emerald-500 font-bold'>Courses</span></Link>
+          <Link href={'/course'}><span className={isLinkActive('/course') ? tailCurrentLinkClass : tailLinkClass}>Courses</span></Link>
         </li>
         <li>
-          <Link href={'/resources'}><span className="text-emerald-500 font-bold">Resources</span></Link>
+          <Link href={'/resources'}><span className={isLinkActive('/resources') ? tailCurrentLinkClass : tailLinkClass}>Resources</span></Link>
         </li>
         <li>
-          <Link href={'/about'}><span className="text-emerald-500 font-bold">About</span></Link>
+          <Link href={'/about'}><span className={isLinkActive('/about') ? tailCurrentLinkClass : tailLinkClass}>About</span></Link>
         </li>
       </ul>
     </nav>

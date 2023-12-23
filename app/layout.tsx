@@ -4,7 +4,7 @@ import './globals.css'
 import NavBar from '@/components/navbar'
 import Providers from '@/context/providers'
 
-const roboto = Roboto({ weight: '400', subsets: ['latin'] })
+const roboto = Roboto({ weight: ['100', '300', '400', '500', '700', '900'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
