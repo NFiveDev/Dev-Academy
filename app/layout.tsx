@@ -17,11 +17,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='h-full dark'>
-      <body className={`${roboto.className} min-h-full dark:bg-slate-950`}>
+    <html id='dev-academy-dom' lang="en" className='h-full dark'>
+      <body className={`${roboto.className} min-h-full dark:bg-gray-900`}>
         <Providers>
           <NavBar />
-          <main className='flex flex-1 flex-col max-w-screen-xl w-full mx-auto'>
+          <main className='flex flex-1 flex-col max-w-screen-xl w-full mx-auto '>
             {children}
           </main>
         </Providers>

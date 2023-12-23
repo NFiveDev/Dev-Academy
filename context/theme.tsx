@@ -1,6 +1,6 @@
 'use client'
 
-import { Dispatch, createContext, useReducer } from "react"
+import { Dispatch, createContext, useEffect, useReducer } from "react"
 
 type themeState = {
   mode: string
@@ -40,14 +40,11 @@ export const ThemeDispatchContext = createContext<Dispatch<themeAction> | null>(
 export function ThemeProvider(props: { children: JSX.Element | JSX.Element[] }) {
   const [theme, dispatch] = useReducer(themeReducer, initState);
 
-
   return (
-    <div className={theme.mode}>
-      <ThemeContext.Provider value={theme}>
-        <ThemeDispatchContext.Provider value={dispatch}>
-          {props.children}
-        </ThemeDispatchContext.Provider>
-      </ThemeContext.Provider>
-    </div>
+    <ThemeContext.Provider value={theme}>
+      <ThemeDispatchContext.Provider value={dispatch}>
+        {props.children}
+      </ThemeDispatchContext.Provider>
+    </ThemeContext.Provider>
   )
 }
