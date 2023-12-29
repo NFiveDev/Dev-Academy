@@ -19,7 +19,7 @@ function MobileNavigation() {
         <HiBars3 className='text-slate-800 dark:text-slate-300 w-8 h-8' />
       </button>
 
-      <div className="transition-all ease-in-out duration-500">
+      <div className="transition-all ease-in-out duration-1000">
         <div className={`absolute block lg:hidden bg-slate-800 w-[250px] top-0 right-0 bottom-0 ${drawerMargin}`}>
           <div className="py-2">
             <button className="" onClick={() => setOpen(false)}>
