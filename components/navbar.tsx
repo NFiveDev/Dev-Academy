@@ -16,7 +16,7 @@ function MobileNavigation() {
   return (
     <>
       <button onClick={() => setOpen(true)} className="static lg:hidden mx-2">
-        <HiBars3 className='text-slate-300 w-8 h-8' />
+        <HiBars3 className='text-slate-800 dark:text-slate-300 w-8 h-8' />
       </button>
 
       <div className="transition-all ease-in-out duration-500">
@@ -37,8 +37,6 @@ function MobileNavigation() {
               <Link href={'/about'}><span className='text-emerald-500 font-semibold text-xl'>About</span></Link>
             </li>
           </ul>
-
-
         </div>
       </div>
     </>
@@ -79,7 +77,7 @@ function NavBar() {
         <div className="flex flex-row justify-between">
           <Link href={'/'}>
             <div>
-              <h1 className="text-white">Dev Academy</h1>
+              <h1 className="text-slate-500 dark:text-white">Dev Academy</h1>
             </div>
           </Link>
           <div className="flex flex-row items-center">
