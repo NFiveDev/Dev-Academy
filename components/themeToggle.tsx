@@ -1,7 +1,6 @@
 'use client'
 
 import useTheme from "@/hooks/useTheme"
-import { useState } from "react";
 import { HiSun, HiMoon } from 'react-icons/hi2';
 
 export function ThemeToggle() {
@@ -16,7 +15,7 @@ export function ThemeToggle() {
   }
 
   return (
-    <button onClick={onClickHandler} className='transition-all ease-in-out duration-300 dark:bg-gray-700 bg-gray-200 hover:bg-gray-400 cursor-pointer rounded-full h-fit p-1'>
+    <button onClick={onClickHandler} className='mx-2 lg:mx-0 transition-all ease-in-out duration-300 dark:bg-gray-700 bg-gray-200 hover:bg-gray-400 cursor-pointer rounded-full h-fit p-1'>
       {isLightMode() && <HiSun className='text-yellow-400' />}
       {isDarkMode() && <HiMoon className='text-blue-600' />}
     </button>
