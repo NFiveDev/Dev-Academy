@@ -58,6 +58,7 @@ async function Run() {
   } catch (e) {
     throw new Error('Cannot seed data: ' + e);
   } finally {
+    console.log('SEEDER COMPLETE');
     mongoose.disconnect();
   }
 }
