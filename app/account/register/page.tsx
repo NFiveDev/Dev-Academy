@@ -5,11 +5,11 @@ export default async function Register() {
     <div className='relative m-auto py-36'>
       <div className='bg-slate-700 py-8 px-10 rounded-lg max-w-screen-sm min-w-96 border-emerald-600 border-2'>
         <div className='flex w-fit mx-auto p-4 rounded-full border-emerald-600 border-2'>
-          <HiRocketLaunch className='text-slate-400 w-14 h-14' />
+          <HiRocketLaunch className='text-slate-300 w-14 h-14' />
         </div>
 
         <div className='text-center py-2'>
-          <h3 className='text-emerald-400 font-bold text-2xl'>
+          <h3 className='text-slate-400 font-bold text-2xl'>
             Join the empire!
           </h3>
         </div>
