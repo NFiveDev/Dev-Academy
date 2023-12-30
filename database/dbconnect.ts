@@ -10,6 +10,9 @@ const connect = async () => {
   } catch (error) {
     throw new Error('connection failed with err: ' + error);
   }
+  // finally {
+  //   mongoose.connection.close();
+  // }
 };
 
 export default connect;
