@@ -11,8 +11,11 @@ interface ISignUpFormInput {
 
 export default function SignUphtmlForm() {
   const { register, handleSubmit } = useForm<ISignUpFormInput>();
+
+  const onSubmitHandler: SubmitHandler<ISignUpFormInput> = (data) => {};
+
   return (
-    <form className='max-w-md mx-auto'>
+    <form onSubmit={handleSubmit(onSubmitHandler)} className='max-w-md mx-auto'>
       <TextField
         type='email'
         label='Your email'

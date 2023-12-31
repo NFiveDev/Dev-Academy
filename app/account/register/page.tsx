@@ -11,7 +11,7 @@ export default function Register() {
 
         <div className='text-center py-2'>
           <h3 className='text-slate-400 font-bold text-2xl'>
-            Join the empire!
+            Join the community!
           </h3>
         </div>
 
