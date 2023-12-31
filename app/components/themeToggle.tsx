@@ -1,6 +1,6 @@
 'use client';
 
-import useTheme from '@/hooks/useTheme';
+import useTheme from '@/app/lib/hooks/useTheme';
 import { HiSun, HiMoon } from 'react-icons/hi2';
 
 export function ThemeToggle() {
