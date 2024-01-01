@@ -10,18 +10,14 @@ interface ISignUpFormInput {
 }
 
 export default function SignUphtmlForm() {
-  const { register, handleSubmit } = useForm<ISignUpFormInput>();
-
-  const onSubmitHandler: SubmitHandler<ISignUpFormInput> = (data) => {};
-
   return (
-    <form onSubmit={handleSubmit(onSubmitHandler)} className='max-w-md mx-auto'>
+    <form className='max-w-md mx-auto'>
       <TextField
         type='email'
         label='Your email'
         id='email'
         placeholder='yourmail@devacademy.com'
-        register={register}
+        required
       />
 
       <TextField
@@ -29,7 +25,7 @@ export default function SignUphtmlForm() {
         label='Your password'
         id='password'
         placeholder='yourmail@devacademy.com'
-        register={register}
+        required
       />
 
       <button

@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 
 const SALT_ROUNDS = 10;
 
-function AuthHelper() {
+function Encrypter() {
   const compare = async (
     inputOne: string,
     inputTwo: string
@@ -22,4 +22,4 @@ function AuthHelper() {
   };
 }
 
-export default AuthHelper;
+export default Encrypter;

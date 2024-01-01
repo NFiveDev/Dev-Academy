@@ -1,11 +1,13 @@
-import { UseFormRegister } from 'react-hook-form';
+// import { UseFormRegister } from 'react-hook-form';
 
 type TextFieldProps = {
   id: string;
   label: string;
   placeholder?: string;
   type: 'email' | 'password' | 'text';
-  register: UseFormRegister<any>;
+  errorMessage?: string;
+  required?: boolean;
+  //register: UseFormRegister<any>;
 };
 
 export function TextField(props: TextFieldProps) {
@@ -18,11 +20,11 @@ export function TextField(props: TextFieldProps) {
         {props.label}
       </label>
       <input
-        {...props.register(props.id)}
         type={props.type}
         id={props.id}
         className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
         placeholder={props.placeholder}
+        required={props.required}
       />
     </div>
   );
