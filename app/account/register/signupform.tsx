@@ -2,6 +2,8 @@
 
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { TextField } from '@/app/components/form/fields';
+import { useFormState, useFormStatus } from 'react-dom';
+import createUser from './actions';
 
 interface ISignUpFormInput {
   username: string;
@@ -9,9 +11,16 @@ interface ISignUpFormInput {
   password: string;
 }
 
+const formStatus = {
+  errorMessage: '',
+  ok: true,
+};
+
 export default function SignUphtmlForm() {
+  const [state, formAction] = useFormState(createUser, formStatus);
+
   return (
-    <form className='max-w-md mx-auto'>
+    <form action={formAction} className='max-w-md mx-auto'>
       <TextField
         type='email'
         label='Your email'
